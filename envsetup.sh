@@ -1697,11 +1697,6 @@ function _wrap_build()
     return $ret
 }
 
-function make()
-{
-    _wrap_build $(get_make_command "$@") "$@"
-}
-
 function provision()
 {
     if [ ! "$ANDROID_PRODUCT_OUT" ]; then
