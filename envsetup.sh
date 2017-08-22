@@ -142,6 +142,14 @@ function check_product()
         echo "Couldn't locate the top of the tree.  Try setting TOP." >&2
         return
     fi
+
+    if (echo -n $1 | grep -q -e "^aqua_") ; then
+       AQUA_BUILD=$(echo -n $1 | sed -e 's/^aqua_//g')
+    else
+       AQUA_BUILD=
+    fi
+    export AQUA_BUILD
+
         TARGET_PRODUCT=$1 \
         TARGET_BUILD_VARIANT= \
         TARGET_BUILD_TYPE= \
