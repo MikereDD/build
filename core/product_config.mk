@@ -181,7 +181,7 @@ all_product_configs := $(call get-product-makefiles,\
     $(SRC_TARGET_DIR)/product/AndroidProducts.mk)
 else
  ifneq ($(AQUA_BUILD),)
-    all_product_configs := device/*/$(AQUA_BUILD)/aquarios.mk
+    all_product_configs := $(shell ls device/*/$(AQUA_BUILD)/aquarios.mk)
   else
     # Read in all of the product definitions specified by the AndroidProducts.mk
     # files in the tree.
