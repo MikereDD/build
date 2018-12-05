@@ -151,10 +151,9 @@ class EdifyGenerator(object):
            ");")
     self.script.append(self.WordWrap(cmd))
 
-  def RunBackup(self, command):
-    self.script.append('package_extract_file("system/bin/backuptool.sh", "/tmp/backuptool.sh");')
-    self.script.append('set_perm(0, 0, 0777, "/tmp/backuptool.sh");')
-    self.script.append(('run_program("/tmp/backuptool.sh", "%s");' % command))
+  def RunBackup(self, command, system_path):
+    self.script.append(('run_program("/tmp/install/bin/backuptool.sh", "%s", "%s");' % (
+        command, system_path)))
 
   def ShowProgress(self, frac, dur):
     """Update the progress bar, advancing it over 'frac' over the next
