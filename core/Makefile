@@ -3060,6 +3060,44 @@ bacon: otapackage
 	@echo -e ${CL_BWT}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
 	@echo -e "SIZE:"${CL_CYN}" `ls -la --si $(AQUARIOS_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
 
+.PHONY: otapackage aquarios
+otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+aquarios: otapackage
+	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(AQUARIOS_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(AQUARIOS_TARGET_PACKAGE).md5sum
+	@echo -e "Package complete: $(AQUARIOS_TARGET_PACKAGE)"
+	@echo -e ""
+	@echo -e ${5fffff}"		    ≪  🐬 ⚯  🐙 ⚯  🐟 ⚯  🐬 ⚯  🐟 ⚯  🐙 ⚯  🐬  ≫"
+	@echo -e ""
+	@echo -e ${CL_BWT}"		    Yay!  You did it!  You've built the best ROM!    "${CL_RST}
+	@echo -e ""
+	@echo -e ""
+	@echo -e ${eaffba}"		     .oo                             o .o88o. .oPko. "${CL_RST}
+	@echo -e ${eaffba}"		    .K 8                               8    8 8      "${CL_RST}
+	@echo -e ${eaffba}"		   .K  8 .oPYo. o    o .o88o. o88o. o8 8    8 'kooo. "${CL_RST}
+	@echo -e ${eaffba}"		  o0ooo8 8    8 8    8 .rood0 8  ''  8 8    8     '8 "${CL_RST}
+	@echo -e ${eaffba}"		 .P    8 8    8 8    8 8    8 8      8 8    8      8 "${CL_RST}
+	@echo -e ${eaffba}"		.P     8 '0oo08 '0oo0' '0oo88 8      8 '8008' '8ooP' "${CL_RST}
+	@echo -e ${eaffba}"		..:::::..:....8 :.....::.....:..:::::..:.....::.....:"${CL_RST}
+	@echo -e ${eaffba}"		::::::::::::::8 :::::::::::::::::::::::::::::::::::::"${CL_RST}
+	@echo -e ${eaffba}"		::::::::::::::..:::::::::::::::::::::::::::::::::::::"${CL_RST}
+	@echo -e ${00d7d7}"		_____________________________________________________"${CL_RST}
+	@echo -e ${005f87}"		_,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-."${CL_RST}
+	@echo -e ${0087af}"		.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,_"${CL_RST}
+	@echo -e ${5fafaf}"		_,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-."${CL_RST}
+	@echo -e ${00d7d7}"		.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~"${CL_RST}
+	@echo -e ${82ffff}"		_,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-."${CL_RST}
+	@echo -e ""
+	@echo -e ""
+	@echo -e ""
+	@echo -e ""
+	@echo -e ${CL_BWT}"			   Welcome to the age of AquariOS"${CL_RST}
+	@echo -e ""
+	@echo -e ${00d7d7}"		    ≪  🐬 ⚯  🐙 ⚯  🐟 ⚯  🐬 ⚯  🐟 ⚯  🐙 ⚯  🐬  ≫"${CL_RST}
+	@echo -e ""
+	@echo -e ${CL_BWT}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
+	@echo -e "SIZE:"${CL_CYN}" `ls -la --si $(AQUARIOS_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
+
 endif    # build_ota_package
 
 # -----------------------------------------------------------------
