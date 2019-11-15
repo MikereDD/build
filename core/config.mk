@@ -226,9 +226,11 @@ endif
 # are specific to the user's build configuration.
 include $(BUILD_SYSTEM)/envsetup.mk
 
-include $(TOPDIR)vendor/extras/configs/BoardConfigKernel.mk
+ifneq ($(AQUA_BUILD),)
+include $(TOPDIR)vendor/extras/build/boardconfig/BoardConfigKernel.mk
 
-include $(TOPDIR)vendor/extras/configs/BoardConfigSoong.mk
+include $(TOPDIR)vendor/extras/build/boardconfig/BoardConfigSoong.mk
+endif
 
 # Pruned directory options used when using findleaves.py
 # See envsetup.mk for a description of SCAN_EXCLUDE_DIRS
