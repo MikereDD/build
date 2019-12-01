@@ -896,8 +896,23 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     # Stage 3/3: Make changes.
     script.Comment("Stage 3/3")
 
-  # Dump fingerprints
-  script.Print("Target: {}".format(target_info.fingerprint))
+  script.Print("_____________________________________________")
+  script.Print("                                             ")
+  script.Print("              Dive Deep Into...              ")
+  script.Print(" .--.                          _  .--.  .--. ")
+  script.Print(": .; :                        :_;: ,. :: .--'")
+  script.Print(":    : .---..-..-. .--.  .--. .-.: :: :`. `. ")
+  script.Print(": :: :' .; :: :; :' .; ; : ..': :: :; : _`, :")
+  script.Print(":_;:_;`._. ;`.__.'`.__,_;:_;  :_;`.__.'`.__.'")
+  script.Print("         : :                                 ")
+  script.Print("         :_:                                 ")
+  script.Print("_,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__")
+  script.Print(".-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.")
+  script.Print("_,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__")
+  script.Print(".,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.")
+  script.Print("                                             ")
+  script.Print("            Based on Android Q/10            ")
+  script.Print("_____________________________________________")
 
   is_system_as_root = target_info.get("system_root_image") == "true"
   if is_system_as_root and not common.system_as_system:
